@@ -1,7 +1,7 @@
 class Env {
     static names = [
      DB_URL,
-     JWT_SECRET
+     JWT_SECRET,
      PORT
     ] as const;
   
