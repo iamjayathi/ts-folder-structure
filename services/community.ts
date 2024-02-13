@@ -1,4 +1,4 @@
-import { IBook } from "@interfaces/v1/book";
+import { ICommunity } from "@interfaces/v1/community";
 import Database from "@loaders/v1/database";
 import CommunityColumn from "@schema/v1/book";
 import collections from "@schema/v1/meta";
@@ -14,9 +14,17 @@ class CommunityService {
       .findOne({ id: { $eq: id } });
   }
 
-  static async create(data: IBook) {
+  static async create(data: ICommunity) {
     return Database.instance.collection(collections.community).insertOne(data);
   }
+static async getMembers(id: number) {
+    const comm = Database.instance.collection(collections.community).findone({slug: id});
+    const data = await Database.instance.collection(collections.member).find({ community: community._id }, { __v: false })
+      .populate({ path: "role", select: "id name" })
+      .populate({ path: "user", select: "id name" })
+      .sort({ created_at: -1 })
+      
+    return 
+  }
 }
-
 export default BookService;
