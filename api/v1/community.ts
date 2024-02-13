@@ -1,9 +1,12 @@
-import CommunityController from "@controllers/v1/book";
+import CommunityController from "@controllers/v1/community";
 import express from "express";
 
-const BookRouter = express.Router();
+const CommunityRouter = express.Router();
 
-BookRouter.get("/", BookController.getAll);
-BookRouter.get("/:id", BookController.getSingle);
+CommunityRouter.post("/",auth,CommunityController.create);
+CommunityRouter.get("/",auth,CommunityController.getAll);
+CommunityRouter.get("/:id/members",CommunityController.getMembers);
+CommunityRouter.get("/me/owner",auth,CommunityController.getOwned);
+CommunityRouter.get("/me/member",auth,CommunityController.getJoined);
 
-export default BookRouter;
+export default CommunityRouter;
