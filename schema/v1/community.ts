@@ -5,7 +5,7 @@ const CommunityColumnList = ["_id", "name", "slug", "owner", "created_at", "upda
 // require:true,
 // unique:true
 // default:Date.now()
-// How do I do assignment of fields like required, unique and default here 
+// How do I do assignment of fields like required, unique and default in the schemas
 
 export const CommunityColumn =
   listToColumn<typeof CommunityColumnList[number]>(BookColumnList);

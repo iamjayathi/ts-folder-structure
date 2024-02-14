@@ -169,5 +169,4 @@ class RoleService {
     }
         
 }
-  
-  export default RoleService;
+export default RoleService;

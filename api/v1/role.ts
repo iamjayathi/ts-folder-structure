@@ -6,4 +6,5 @@ const RoleRouter = express.Router();
 RoleRouter.post("/",auth,RoleController.create);
 RoleRouter.get("/",auth,RoleController.getAll);
 
+
 export default RoleRouter;

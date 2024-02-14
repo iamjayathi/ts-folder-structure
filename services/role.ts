@@ -1,6 +1,6 @@
 import { IRole } from "@interfaces/v1/role";
 import Database from "@loaders/v1/database";
-import roleColumn from "@schema/v1/book";
+import RoleColumn from "@schema/v1/role";
 import collections from "@schema/v1/meta";
 import Validator from 'validatorjs';
 const { Snowflake } = require("@theinternetfolks/snowflake");

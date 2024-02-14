@@ -5,3 +5,4 @@ export interface IUser {
     password: string;
     created_at: date;
   }
+  

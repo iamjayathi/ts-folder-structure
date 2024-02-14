@@ -9,4 +9,5 @@ CommunityRouter.get("/:id/members",CommunityController.getMembers);
 CommunityRouter.get("/me/owner",auth,CommunityController.getOwned);
 CommunityRouter.get("/me/member",auth,CommunityController.getJoined);
 
+
 export default CommunityRouter;

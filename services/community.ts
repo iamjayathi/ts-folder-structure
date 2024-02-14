@@ -85,10 +85,11 @@ class CommunityService {
   }
 
 
-  
+
 
   static async getOwned() {
     const user_id:Number = getContext('userId');
+    
     
     const ownedCommunities = await  Database.instance.collection(collections.community).find(
       { owner: user_id },
@@ -142,4 +143,4 @@ class CommunityService {
 
   
 }
-export default BookService;
+export default CommunityService;
